@@ -33,21 +33,16 @@ public class UserDetails {
 	private String pancardid;
 	
 	@Column
+	private String address;
+	
+	@Column
 	private byte isactive;
 	
 	@Column
 	private byte isdeleted;
 
-	@Override
-	public String toString() {
-		return "UserDetails [user_id=" + user_id + ", username=" + username + ", emailid=" + emailid + ", mobno="
-				+ mobno + ", mobno2=" + mobno2 + ", aadharid=" + aadharid + ", pancardid=" + pancardid + ", isactive="
-				+ isactive + ", isdeleted=" + isdeleted + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
-	}
-
 	public UserDetails(long user_id, String username, String emailid, long mobno, long mobno2, String aadharid,
-			String pancardid, byte isactive, byte isdeleted) {
+			String pancardid, String address, byte isactive, byte isdeleted) {
 		super();
 		this.user_id = user_id;
 		this.username = username;
@@ -56,8 +51,17 @@ public class UserDetails {
 		this.mobno2 = mobno2;
 		this.aadharid = aadharid;
 		this.pancardid = pancardid;
+		this.address = address;
 		this.isactive = isactive;
 		this.isdeleted = isdeleted;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDetails [user_id=" + user_id + ", username=" + username + ", emailid=" + emailid + ", mobno="
+				+ mobno + ", mobno2=" + mobno2 + ", aadharid=" + aadharid + ", pancardid=" + pancardid + ", address="
+				+ address + ", isactive=" + isactive + ", isdeleted=" + isdeleted + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
 	public UserDetails() {
@@ -69,7 +73,7 @@ public class UserDetails {
 		return user_id;
 	}
 
-	public void setUser_id(int user_id) {
+	public void setUser_id(long user_id) {
 		this.user_id = user_id;
 	}
 
@@ -121,6 +125,14 @@ public class UserDetails {
 		this.pancardid = pancardid;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public byte getIsactive() {
 		return isactive;
 	}
@@ -136,6 +148,10 @@ public class UserDetails {
 	public void setIsdeleted(byte isdeleted) {
 		this.isdeleted = isdeleted;
 	}
+	
+	
+
+	
 
 
 }
